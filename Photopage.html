@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrineer Photos</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: "|";
+            margin: 0 8px;
+            color: #000;
+        }
+
+        .navbar-nav .nav-item:last-child .nav-link::after {
+            content: "";
+        }
+
+        .card {
+            height: 300px;
+            border: none;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(155, 211, 214, 0.6);
+            border: 2px solid #9edada;
+        }
+
+        footer {
+            width: 100%;
+        }
+
+        #Contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background-color: #222;
+            color: white;
+        }
+
+        .Quick-link a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .page1 {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 60%;
+            height: 4px;
+            background-color: #28a745;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .card {
+            border: none;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            animation: zoomIn 0.4s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Homepahe1.html">
+                <img src="Agrineer logo.jpg" height="75" width="180">
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Homepahe1.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Aboutpage1.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ProductsPage.html">Product</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Photopage.html">Photo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactPage.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+        <h1 class="mb-4 section-title">Photos</h1>
+
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii1.jpeg" alt="Agrineer Photo 1" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii2.jpeg" alt="Agrineer Photo 2" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii3.jpeg" alt="Agrineer Photo 3" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii4.jpeg" alt="Agrineer Photo 4" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii5.jpeg" alt="Agrineer Photo 5" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii6.jpeg" alt="Agrineer Photo 6" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii7.jpeg" alt="Agrineer Photo 7" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii8.jpeg" alt="Agrineer Photo 8" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii9.jpeg" alt="Agrineer Photo 9" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii10.jpeg" alt="Agrineer Photo 10" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii11.jpeg" alt="Agrineer Photo 11" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="card">
+                    <img src="Agriii12.jpeg" alt="Agrineer Photo 12" />
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="mt-5">
+        <div id="Contact">
+            <div class="Quick-link">
+                <h5>Agrineer</h5>
+                <p>We Are AGRINEER..
+                    Agrineer is the Group of Agriculture Engineer's Provide High Quality Agriculture Machinery.
+
+                    AGRINEER is your go-to source for reliable products, and expert guidance, helping you achieve a
+                    better farming experience with the best farming equipment and advice.
+
+                    Harvesting happiness by boosting mechanization is our motto."</p>
+
+
+            </div>
+            <div class="contact1">
+                <div class="container-contact">
+                    <h5>Contact us</h5>
+                    <p>📞+8390695955</p>
+                    <p>📞+9156637098</p>
+                    <p>📞+9797155486</p>
+                    <p>📞+8530879607</p>
+                    <p>Email: agrineergroup@gmail.com</p>
+                    <p>Satara,Maharashtra 415519</p>
+                </div>
+            </div>
+            <div class="Quick-link">
+                <h5>Quick Link</h5>
+                <li class="nav-item"><a class="nav-link" href="Homepahe1.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="Aboutpage1.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="ProductsPage.html">Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="Photopage.html">Photo</a></li>
+                <li class="nav-item"><a class="nav-link" href="ContactPage.html">Contact</a></li>
+            </div>
+            <div class="follow">
+                <h5>Follow US</h5>
+                <a href="https://www.instagram.com/agrineer_machinery/"><img src="InstAgri.avif" height="50"
+                        width="50"></a>
+                <a href="https://www.facebook.com/agrineermachinery/"><img src="FaceBookAgri.avif" height="50"
+                        width="50"></a>
+
+            </div>
+        </div>
+        <div class="page1">
+            <p>Agrineer Agro Machinery | Empowering Farmers with Modern Technology</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightboxImg");
+
+            document.querySelectorAll(".card img").forEach(img => {
+                img.addEventListener("click", function () {
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = this.src;
+                });
+            });
+
+            window.closeLightbox = function () {
+                lightbox.style.display = "none";
+            }
+
+            
+            lightboxImg.addEventListener("click", function (e) {
+                e.stopPropagation();
+            });
+
+            
+            lightbox.addEventListener("click", function () {
+                closeLightbox();
+            });
+
+            
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") {
+                    closeLightbox();
+                }
+            });
+
+        });
+    </script>
+
+    <div id="lightbox">
+        <span onclick="closeLightbox()"
+            style="position:absolute;top:20px;right:30px;color:white;font-size:35px;cursor:pointer;">
+            ❌
+        </span>
+
+        <img id="lightboxImg">
+    </div>
+
+</body>
+
+</html>

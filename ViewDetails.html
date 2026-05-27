@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrineer Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-image-wrapper {
+            width: 100%;
+            height: 600px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #productImage {
+            max-width: 100%;
+            max-height: 600px;
+            object-fit: contain;
+        }
+
+        #Contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 0;
+            padding: 30px;
+            background-color: rgb(11, 1, 1);
+            color: white;
+        }
+
+        #Contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 0;
+            padding: 30px;
+            background-color: rgb(56, 54, 54);
+            color: white;
+        }
+
+        .Quick-link a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .page1 {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+
+        .Quick-link a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            bottom: 50px;
+            width: 55px;
+            height: 55px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-float img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        .whatsapp-float {
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .whatsapp-float {
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top shadow">
+        <div class="container-fluid">
+
+
+            <a href="Homepahe1.html" class="navbar-brand d-flex align-items-center">
+                <img src="Agrineer logo.jpg" alt="Logo" height="75" width="180"
+                    class="me-2 border border-2 border-light">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="Homepahe1.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Aboutpage1.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ProductsPage.html">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Photopage.html">Photo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactPage.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+
+        <div class="row">
+
+            <div class="col-md-6 d-flex flex-column align-items-center">
+
+                <img id="productImage" class="img-fluid rounded shadow mb-3" alt="">
+
+
+                <div class="mt-auto">
+                    <a href="ProductsPage.html" class="btn btn-success">
+                        ← Back to Products
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+                <h2 id="productName"></h2>
+
+                <div class="card shadow mt-3">
+                    <div class="card-header bg-success text-white fw-bold text-center">
+                        SPECIFICATION
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-bordered m-0">
+                            <tbody id="specTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get("product");
+
+        const products = {
+            an205p: {
+                name: "AN 205P RED REGULAR",
+                image: "Agre1.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN205P" },
+                    { label: "Engine Type", value: "4-Stroke Air Cooled Petrol Engine" },
+                    { label: "Engine Power", value: "7.5 HP / 3600RPM" },
+                    { label: "Displacement", value: "212 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "Wheels", value: "400-8 TYRES" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" }
+                ]
+            },
+            apw606: {
+                name: "APW606 7HP PETROL RED REGULAR",
+                image: "Agre2.jpeg",
+                specifications: [
+                    { label: "Model No", value: "APW606" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Petrol Engine" },
+                    { label: "Engine Power", value: "7.5 HP / 3600RPM" },
+                    { label: "Displacement", value: "212 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "Wheels", value: "400-8 TYRES" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" }
+                ]
+            },
+            an205p_rw: {
+                name: "AN205P RED & WHITE",
+                image: "Agre3.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN205P RW" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Petrol Engine" },
+                    { label: "Engine Power", value: "7.5 HP / 3600RPM" },
+                    { label: "Displacement", value: "212 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "Wheels", value: "400-8 TYRES" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" }
+                ]
+            },
+            bahubali: {
+                name: "BAHUBALI",
+                image: "Agre4.jpeg",
+                specifications: [
+                    { label: "Model No", value: "BAHUBALI" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Petrol Engine" },
+                    { label: "Engine Power", value: "8 HP / 3600RPM" },
+                    { label: "Displacement", value: "232 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "Suspension System", value: "2 Shock Absorbers" },
+                    { label: "Wheels", value: "ATV RUBBER TYRE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "LIGHT", value: "2 LED LIGHT" },
+                    { label: "Weight", value: "70–95 kg" }
+                ]
+            },
+            an205p_premium: {
+                name: "AN205P PREMIUM",
+                image: "Agri4.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN205P PREMIUM" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Petrol Engine" },
+                    { label: "Engine Power", value: "8 HP / 3600RPM" },
+                    { label: "Displacement", value: "232 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "Suspension System", value: "2 Shock Absorbers" },
+                    { label: "Wheels", value: "400-8 TYRE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" }
+                ]
+            },
+            an200ds: {
+                name: "AN200 DS",
+                image: "Agri5.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN200 DS" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Petrol Engine" },
+                    { label: "Engine Power", value: "7.5 HP / 3600RPM" },
+                    { label: "Displacement", value: "212 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "Suspension System", value: "2 Shock Absorbers" },
+                    { label: "Wheels", value: "400-8 TYRE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" }
+                ]
+            },
+            an200hl: {
+                name: "AN 200 HEAD LIGHT",
+                image: "Agri6.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN200 HL" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Petrol Engine" },
+                    { label: "Engine Power", value: "7.5 HP / 3600RPM" },
+                    { label: "Displacement", value: "212 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "LIGHT System", value: "with head light" },
+                    { label: "Wheels", value: "400-8 TYRE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" }
+                ]
+            },
+            an200atv: {
+                name: "AN200ATV",
+                image: "Agri7.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN200ATV" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Petrol Engine" },
+                    { label: "Engine Power", value: "7.5 HP / 3600RPM" },
+                    { label: "Displacement", value: "212 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "Wheels", value: "ATV TYRE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" },
+                ]
+            },
+            an205d: {
+                name: "AN205 D",
+                image: "Agri8.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN205 D" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Diesel Engine" },
+                    { label: "Engine Power", value: "7.5 HP / 3600RPM" },
+                    { label: "Displacement", value: "232 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R" },
+                    { label: "Wheels", value: "4-00--8 TYPE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" },
+                ]
+            },
+            an205d_kama: {
+                name: "AN205D KAMA",
+                image: "Agri9.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN205D KAMA" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Diesel Engine" },
+                    { label: "ENGINE", value: "KAMA" },
+                    { label: "Engine Power", value: "7 HP / 3600RPM" },
+                    { label: "Displacement", value: "232 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "4-00-8 TYPE" },
+                    { label: "Wheels", value: "ATV TYRE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "32 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "Recoil Start" },
+                    { label: "Weight", value: "70–95 kg" },
+                ]
+            },
+            an186f: {
+                name: "AN 186F",
+                image: "Agri10.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN 186F" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Diesel Engine" },
+                    { label: "ENGINE", value: "KAMA" },
+                    { label: "Engine Power", value: "10 HP / 3600RPM" },
+                    { label: "Displacement", value: "296 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R TYPE" },
+                    { label: "Wheels", value: "500-12 TUBE TYPE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "40 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "E Start Without Battery" },
+                    { label: "Weight", value: "125 kg" },
+                ]
+            },
+            hpr_lc: {
+                name: "7HP REAPER LONG CROP",
+                image: "Agri15.jpeg",
+                specifications: [
+                    { label: "Model No", value: "7HP REAPER LONG CROP" },
+                    { label: "Engine Type", value: "4-Stroke Petrol Engine" },
+                    { label: "Power", value: "7 HP" },
+                    { label: "Cutting Width", value: "1200 mm" },
+                    { label: "Cutting Height", value: "10-60 cm Adjustable " },
+                    { label: "Transmission", value: "Belt+Gear Drive" },
+                    { label: "Crop Type", value: "Paddy,Wheat,Ragi,Soyabean" },
+                    { label: "Working Capacity", value: "0.25-0.4 Acre/Hour" },
+                    { label: "Starting", value: "Recoil Start" },
+
+                ]
+            },
+            an188f: {
+                name: "AN 188F",
+                image: "Agri10.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN 188F" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Diesel Engine" },
+                    { label: "ENGINE", value: "KAMA" },
+                    { label: "Engine Power", value: "12 HP / 3600RPM" },
+                    { label: "Displacement", value: "456 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R TYPE" },
+                    { label: "Wheels", value: "ATV TYRES" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "40 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "E Start Without Battery" },
+                    { label: "Weight", value: "125 kg" },
+                ]
+            },
+            an186f_ds: {
+                name: "AN 186F DS",
+                image: "Agri12.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN 186F DS" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Diesel Engine" },
+                    { label: "ENGINE", value: "KAMA" },
+                    { label: "Engine Power", value: "10 HP / 3600RPM" },
+                    { label: "Displacement", value: "296 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R TYPE" },
+                    { label: "Suspension System", value: "2 Shock Absorbers" },
+                    { label: "Wheels", value: "500-12 TUBE TYRE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "40 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "E Start Without Battery" },
+                    { label: "Weight", value: "125 kg" },
+                ]
+            },
+            an188f_ds: {
+                name: "AN 188F DS",
+                image: "Agri13.jpeg",
+                specifications: [
+                    { label: "Model No", value: "AN 188F DS" },
+                    { label: "Engine Type", value: "4-Stroke AIR Cooled Diesel Engine" },
+                    { label: "ENGINE", value: "KAMA" },
+                    { label: "Engine Power", value: "12 HP / 3600RPM" },
+                    { label: "Displacement", value: "456 cc" },
+                    { label: "Transmission Type", value: "Gear Drive" },
+                    { label: "Gear System", value: "2F + 1R TYPE" },
+                    { label: "Suspension System", value: "2 Shock Absorbers" },
+                    { label: "Wheels", value: "ATV TYRE" },
+                    { label: "Working Width", value: "30–90 cm (Adjustable)" },
+                    { label: "Working Depth", value: "5–12 cm" },
+                    { label: "Blade Type", value: "40 pcs dry land blades + side disc" },
+                    { label: "Starting System", value: "E Start Without Battery" },
+                    { label: "Weight", value: "125 kg" },
+                ]
+            },
+            hpr_sc: {
+                name: "7HP REAPER SHORT CROP",
+                image: "Agri16.jpeg",
+                specifications: [
+                    { label: "Model No", value: "7HP REAPER SHORT CROP" },
+                    { label: "Engine Type", value: "4-Stroke Petrol Engine" },
+                    { label: "Power", value: "7 HP" },
+                    { label: "Cutting Width", value: "1200 mm" },
+                    { label: "Cutting Height", value: "10-60 cm Adjustable" },
+                    { label: "Transmission", value: "Belt + Gear Drive" },
+                    { label: "Crop Type", value: "Paddy, Wheat, Ragi,Soyabean" },
+                    { label: "Suspension System", value: "2 Shock Absorbers" },
+                    { label: "Working Capacity", value: "0.25-0.4 Acre/Hour" },
+                    { label: "Starting", value: "Recoil Start" },
+
+                ]
+            },
+
+        };
+
+        if (products[productId]) {
+            const product = products[productId];
+
+            document.getElementById("productName").innerText = product.name;
+            document.getElementById("productImage").src = product.image;
+
+
+            if (product.specifications) {
+                const specTable = document.getElementById("specTable");
+                specTable.innerHTML = "";
+
+                product.specifications.forEach(spec => {
+                    specTable.innerHTML += `
+                <tr>
+                    <th style="width:40%">${spec.label}</th>
+                    <td>${spec.value}</td>
+                </tr>
+            `;
+                });
+            }
+        }
+
+    </script><br><br>
+    <div class="footer-container">
+        <div id="Contact">
+            <div class="Quick-link">
+                <h5>Agrineer</h5>
+                <p>We Are AGRINEER..
+                    Agrineer is the Group of Agriculture Engineer's Provide High Quality Agriculture Machinery.
+
+                    AGRINEER is your go-to source for reliable products, and expert guidance, helping you achieve a
+                    better farming experience with the best farming equipment and advice.
+
+                    Harvesting happiness by boosting mechanization is our motto."</p>
+
+
+            </div>
+            <div class="contact1">
+                <div class="container-contact">
+                    <h5>Contact us</h5>
+                    <p>📞+8390695955</p>
+                    <p>📞+9156637098</p>
+                    <p>📞+9797155486</p>
+                    <p>📞+8530879607</p>
+                    <p>Email: agrineergroup@gmail.com</p>
+                    <p>Satara,Maharashtra 415519</p>
+                </div>
+            </div>
+            <div class="Quick-link">
+                <h5>Quick Link</h5>
+                <li class="nav-item"><a class="nav-link" href="Homepahe1.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="Aboutpage1.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="ProductsPage.html">Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="Photopage.html">Photo</a></li>
+                <li class="nav-item"><a class="nav-link" href="ContactPage.html">Contact</a></li>
+            </div>
+            <div class="follow">
+                <h5>Follow US</h5>
+                <a href="https://www.instagram.com/agrineer_machinery/"><img src="InstAgri.avif" height="50"
+                        width="50"></a>
+                <a href="https://www.facebook.com/agrineermachinery/"><img src="FaceBookAgri.avif" height="50"
+                        width="50"></a>
+
+            </div>
+        </div>
+        <div class="page1">
+            <p>Agrineer Agro Machinery | Empowering Farmers with Modern Technology</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <a href="https://wa.me/918390695955" target="_blank" class="whatsapp-float">
+        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp">
+    </a>
+
+
+</body>
+
+</html>

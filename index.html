@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrineer HomePage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        .navbar-nav .nav-link::after {
+            content: "|";
+            margin: 0 8px;
+            color: #000;
+        }
+
+        .navbar-nav .nav-item:last-child .nav-link::after {
+            content: "";
+        }
+
+        .Hero-Section {
+            position: relative;
+        }
+
+        .small-video {
+            width: 100%;
+            height: 100%;
+            max-height: 100vh;
+            object-fit: cover;
+        }
+
+        .video-text {
+            z-index: 2;
+            max-width: 50%;
+            font-family: 'Arial', sans-serif;
+
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .video-text h1 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            font-size: 65px;
+            color: rgb(32, 245, 114);
+            text-shadow: 3px 3px 10px black;
+        }
+
+        .video-text h4 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            font-size: 50px;
+            color: #00ff6a;
+            text-shadow: 3px 3px 10px black;
+        }
+
+        #Contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 0;
+            padding: 30px;
+            background-color: #222;
+            color: rgb(255, 255, 255);
+        }
+
+        #Contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 0;
+            padding: 30px;
+            background-color: #222;
+            color: white;
+        }
+
+        .Quick-link a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .page1 {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+
+
+        .Quick-link a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        @media (max-width: 768px) {
+            .video-text {
+                max-width: 90%;
+                padding-left: 1rem;
+            }
+
+            .video-text h1 {
+                font-size: 36px;
+            }
+
+            .video-text h4 {
+                font-size: 28px;
+            }
+
+            .navbar-nav .nav-link::after {
+                content: "";
+            }
+        }
+
+        .custom-reviews {
+            padding: 80px 0;
+            background: #f3f3f3;
+        }
+
+        .custom-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .custom-title::after {
+            content: "";
+            width: 70px;
+            height: 3px;
+            background: #2e3192;
+            display: block;
+            margin: 10px auto 0;
+        }
+
+        .custom-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 20px;
+
+        }
+
+        .custom-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 10px;
+        }
+
+
+        .custom-wrapper .custom-section:nth-child(3) {
+            border-left: 2px solid #ccc;
+            padding-left: 30px;
+        }
+
+        .custom-score {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .custom-main {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .custom-out {
+            font-size: 22px;
+            color: #777;
+        }
+
+        .custom-stars {
+            color: #f4b400;
+            font-size: 22px;
+        }
+
+        .custom-total {
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .custom-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .custom-label {
+            width: 85px;
+            font-size: 14px;
+        }
+
+        .custom-percent {
+            width: 45px;
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .custom-bar {
+            flex: 1;
+            height: 12px;
+            background: #dcdcdc;
+            border-radius: 20px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+
+        .custom-fill {
+            height: 100%;
+            background: #63a75c;
+            border-radius: 20px;
+        }
+
+        .custom-satisfaction {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 992px) {
+            .custom-section {
+                flex: 1 1 45%;
+            }
+
+            .custom-wrapper .custom-section:nth-child(3) {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .custom-section {
+                flex: 1 1 100%;
+            }
+
+            .custom-wrapper .custom-section:nth-child(3) {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+
+        .container h2 {
+            color: #000600;
+        }
+
+        .container p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .company-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .company-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .company-section h2 {
+            font-size: 36px;
+        }
+
+        .slide-down {
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .slide-down.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .slide-delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .slide-delay-3 {
+            transition-delay: 0.6s;
+        }
+
+        .slide-delay-4 {
+            transition-delay: 0.8s;
+        }
+
+        .slide-delay-5 {
+            transition-delay: 1s;
+        }
+
+        .slide-delay-6 {
+            transition-delay: 1.2s;
+        }
+
+        @media (max-width: 768px) {
+            .company-section video {
+                height: 300px;
+            }
+        }
+
+        .company-section video {
+            width: 600px;
+            height: 450px;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top shadow">
+        <div class="container-fluid">
+
+
+            <a href="Homepahe1.html" class="navbar-brand d-flex align-items-center">
+                <img src="Agrineer logo.jpg" alt="Logo" height="75" width="180"
+                    class="me-2 border border-2 border-light">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Aboutpage1.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ProductsPage.html">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Photopage.html">Photo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactPage.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="Home" class="Hero-Section position-relative">
+        <video class="w-100 small-video" autoplay muted loop playsinline>
+            <source src="VideoAgri.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-text position-absolute top-50 start-0 translate-middle-y text-start text-white ps-5">
+            <h4>The Future of</h4>
+            <h1>AGRO MACHINERY</h1>
+
+        </div>
+    </div>
+
+
+    <section class="custom-reviews">
+        <div class="container">
+            <h2 class="custom-title">Ratings & Reviews</h2>
+
+            <div class="custom-wrapper">
+
+
+                <div class="custom-section">
+                    <div class="custom-score">
+                        <span class="custom-main">4.2</span>
+                        <div class="custom-stars">★ ★ ★ ★ ☆</div>
+                    </div>
+                    <p class="custom-total">25 Ratings</p>
+                </div>
+
+
+                <div class="custom-section">
+                    <div class="custom-row">
+                        <span class="custom-label">★ ★ ★ ★ ★</span>
+                        <div class="custom-bar">
+                            <div class="custom-fill" style="width:52%"></div>
+                        </div>
+                        <span class="custom-percent">52%</span>
+                    </div>
+                    <div class="custom-row">
+                        <span class="custom-label">★ ★ ★ ★</span>
+                        <div class="custom-bar">
+                            <div class="custom-fill" style="width:20%"></div>
+                        </div>
+                        <span class="custom-percent">20%</span>
+                    </div>
+                    <div class="custom-row">
+                        <span class="custom-label">★ ★ ★</span>
+                        <div class="custom-bar">
+                            <div class="custom-fill" style="width:8%"></div>
+                        </div>
+                        <span class="custom-percent">8%</span>
+                    </div>
+                    <div class="custom-row">
+                        <span class="custom-label">★ ★</span>
+                        <div class="custom-bar">
+                            <div class="custom-fill" style="width:12%"></div>
+                        </div>
+                        <span class="custom-percent">12%</span>
+                    </div>
+                    <div class="custom-row">
+                        <span class="custom-label">★</span>
+                        <div class="custom-bar">
+                            <div class="custom-fill" style="width:8%"></div>
+                        </div>
+                        <span class="custom-percent">8%</span>
+                    </div>
+                </div>
+
+
+                <div class="custom-section">
+                    <h3 class="custom-satisfaction">User Satisfaction</h3>
+                    <div class="custom-row">
+                        <span class="custom-label">Response</span>
+                        <div class="custom-bar">
+                            <div class="custom-fill" style="width:100%"></div>
+                        </div>
+                        <span class="custom-percent">100%</span>
+                    </div>
+                    <div class="custom-row">
+                        <span class="custom-label">Quality</span>
+                        <div class="custom-bar">
+                            <div class="custom-fill" style="width:75%"></div>
+                        </div>
+                        <span class="custom-percent">75%</span>
+                    </div>
+                    <div class="custom-row">
+                        <span class="custom-label">Delivery</span>
+                        <div class="custom-bar">
+                            <div class="custom-fill" style="width:66%"></div>
+                        </div>
+                        <span class="custom-percent">66%</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="company-section">
+        <div class="container">
+            <div class="row align-items-center">
+
+
+                <div class="col-md-6 text-center slide-down slide-delay-1">
+                    <video class="img-fluid rounded shadow-lg w-100" controls>
+                        <source src="AGRICOMANY VIDEO.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="col-md-6 mb-4 slide-down slide-delay-2">
+                    <h2 class="fw-bold text-dark mb-3">
+                        Company Overview
+                    </h2>
+
+                    <p class="text-muted mb-4 slide-down slide-delay-3">
+                        Innovative Power Weeder Solutions for Modern Agriculture
+                    </p>
+
+                    <p class="slide-down slide-delay-4">
+                        Welcome to the forefront of agricultural innovation, where every seed
+                        of ingenuity blossoms into a harvest of efficiency and sustainability.
+                        Agrineer Agro Machinery Private Limited is a trusted power weeder
+                        manufacturing company redefining farming technology.
+                    </p>
+
+                    <p class="slide-down slide-delay-5">
+                        We cultivate enduring partnerships with farmers, providing reliable
+                        machinery, expert guidance, and long-term support. Together, we
+                        build a future where productivity and environmental responsibility
+                        grow hand in hand.
+                    </p>
+
+                    <a href="Aboutpage1.html" class="btn btn-success mt-3 px-4 slide-down slide-delay-6">
+                        Discover More
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="py-5 text-center bg-success text-white">
+        <div class="container">
+            <h2 class="mb-5 fw-bold">Our Achievements</h2>
+
+            <div class="row">
+
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="Agrimachine.png" width="60" class="mb-3">
+                    <h1 class="fw-bold counter">500+</h1>
+                    <p>Machines Sold</p>
+                </div>
+
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="AgriFarmer.png" width="60" class="mb-3">
+                    <h1 class="fw-bold counter">300+</h1>
+                    <p>Happy Farmers</p>
+                </div>
+
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="AgriCal.png" width="60" class="mb-3">
+                    <h1 class="fw-bold counter">5+</h1>
+                    <p>Years Experience</p>
+                </div>
+
+                <div class="col-md-3 col-6 mb-4">
+                    <img src="AgriGear.png" width="70" class="mb-3">
+                    <h1 class="fw-bold counter">20+</h1>
+                    <p>Product Models</p>
+                </div>
+
+            </div>
+        </div>
+    </section><br><br>
+
+
+    <div class="footer-container">
+        <div id="Contact">
+            <div class="Quick-link">
+                <h5>Agrineer</h5>
+                <p>We Are AGRINEER..
+                    Agrineer is the Group of Agriculture Engineer's Provide High Quality Agriculture Machinery.
+
+                    AGRINEER is your go-to source for reliable products, and expert guidance, helping you achieve a
+                    better farming experience with the best farming equipment and advice.
+
+                    Harvesting happiness by boosting mechanization is our motto."</p>
+
+
+            </div>
+            <div class="contact1">
+                <div class="container-contact">
+                    <h5>Contact us</h5>
+                    <p>📞+8390695955</p>
+                    <p>📞+9156637098</p>
+                    <p>📞+9797155486</p>
+                    <p>📞+8530879607</p>
+                    <p>Email: agrineergroup@gmail.com</p>
+                    <p>Satara,Maharashtra 415519</p>
+                </div>
+            </div>
+            <div class="Quick-link">
+                <h5>Quick Link</h5>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="Aboutpage1.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="ProductsPage.html">Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="Photopage.html">Photo</a></li>
+                <li class="nav-item"><a class="nav-link" href="ContactPage.html">Contact</a></li>
+            </div>
+            <div class="follow">
+                <h5>Follow US</h5>
+                <a href="https://www.instagram.com/agrineer_machinery/"><img src="InstAgri.avif" height="50"
+                        width="50"></a>
+                <a href="https://www.facebook.com/agrineermachinery/"><img src="FaceBookAgri.avif" height="50"
+                        width="50"></a>
+
+            </div>
+        </div>
+        <div class="page1">
+            <p>Agrineer Agro Machinery | Empowering Farmers with Modern Technology</p>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script>
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.slide-down');
+            elements.forEach(el => setTimeout(() => el.classList.add('show'), 50));
+        });
+        const counters = document.querySelectorAll(".counter");
+
+        counters.forEach(counter => {
+            let target = +counter.innerText.replace("+", "");
+            let count = 0;
+
+            let update = setInterval(() => {
+                count += Math.ceil(target / 50);
+                if (count >= target) {
+                    counter.innerText = target + "+";
+                    clearInterval(update);
+                } else {
+                    counter.innerText = count + "+";
+                }
+            }, 40);
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
